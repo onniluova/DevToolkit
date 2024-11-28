@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 
-const HashContent = () => {
+const CustomDropdown = ({ title, items, className }) => {
     return (
-        <div className="space-y-4 bg-gray-300 text-center h-64 rounded-md shadow-md">
-            <h1 className="">Hasher</h1>
-
+        <div className={`w-48 h-14 ${className}`}>
+            <select>
+                {items.map((item, index) => (
+                    <option key={index} value={item.value}>{item.label}</option>
+                ))}</select>
         </div>
     )
 }
 
-export default HashContent
+export default CustomDropdown

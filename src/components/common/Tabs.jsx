@@ -9,7 +9,7 @@ const Tabs = () => {
     const [activeTab, setActiveTab] = useState("hash")
 
     const getTabStyles = (tabId, currentTab, color) => {
-        const baseStyles = "px-3.5 w-32 text-center rounded-md";
+        const baseStyles = "px-1 w-26 text-center rounded-md";
 
         const colorMap = {
             blue: {
@@ -60,7 +60,7 @@ const Tabs = () => {
 
     return (
         <div>
-            <div className="flex justify-center space-x-4 p-4">
+            <div className="flex justify-center space-x-3 p-2">
                 <div className="flex space-x-3 p-3 bg-gray-200 rounded-md">
                     {tabs.map(tab => (
                         <CustomButton

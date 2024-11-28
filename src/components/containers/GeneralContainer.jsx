@@ -4,7 +4,7 @@ const GeneralContainer = ({
                        title,
                        children,
                        className,
-                       containerWidth = "w-5/12",
+                       containerWidth = "w-7/12",
                        containerHeight = "h-96"
                    }) => {
     return (

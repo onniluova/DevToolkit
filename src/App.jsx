@@ -9,10 +9,9 @@ const App = () => {
     return (
         <ContentContainer>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home  />} />
                 <Route path="/about" element={<About />} />
             </Routes>
-            <Tabs />
         </ContentContainer>
     )
 }
