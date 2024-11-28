@@ -1,17 +1,30 @@
 import React from 'react'
 import GeneralContainer from "@/components/containers/GeneralContainer.jsx";
+import CustomButton from "@/components/common/CustomButton.jsx";
+import CustomDropdown from "@/components/common/Dropdown.jsx";
 
 const ColorConverterContent = () => {
+    const colorTypes = [
+        { value: 'hex', label: 'Hex'},
+        { value: 'rbg', label: 'RBG'}
+    ]
+
     return (
         <div className="flex flex-col space-y-4 px-1">
-            <div
-                className="flex flex-col w-7/12 bg-gradient-to-b from-fuchsia-500 to-fuchsia-600 shadow-md mx-auto rounded-md">
-                <p className="text-lg text-white font-bold text-center py-4">Convert Color</p>
-            </div>
             <div className="flex justify-center gap-2">
-                <GeneralContainer>
+                <GeneralContainer title={"Enter a color (hex or rgb)"}>
                     <textarea
-                        placeholder="Placeholder..."
+                        placeholder="Color here..."
+                        className="w-full h-full shadow-sm rounded-md bg-gray-100 resize-none overflow-hidden"
+                    />
+                </GeneralContainer>
+                <div className={"flex-1"}>
+                    <CustomDropdown items={colorTypes} className={"w-52 h-14 rounded-md text-center"}></CustomDropdown>
+                    <CustomButton title="Convert" className="bg-blue-500 font-bold text-white space-y-10 w-52 rounded-md drop-shadow-xl hover:bg-blue-300 transition-colors duration-200 ease-in-out"/>
+                </div>
+                <GeneralContainer title={"Output"}>
+                    <textarea
+                        placeholder="Color here..."
                         className="w-full h-full shadow-sm rounded-md bg-gray-100 resize-none overflow-hidden"
                     />
                 </GeneralContainer>

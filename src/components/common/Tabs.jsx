@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import HashContent from "@/components/tools/HashContent.jsx";
 import ColorConverterContent from "@/components/tools/ColorConverterContent.jsx";
 import FormatContent from "@/components/tools/FormatContent.jsx";
@@ -59,9 +59,9 @@ const Tabs = () => {
     };
 
     return (
-        <div>
-            <div className="flex justify-center space-x-3 p-2">
-                <div className="flex space-x-3 p-3 bg-gray-200 rounded-md">
+        <div className="w-full">
+            <div className="flex justify-center space-x-3 p-5">
+                <div className="flex space-x-3 p-3 bg-gray-200 rounded-md w-full">
                     {tabs.map(tab => (
                         <CustomButton
                             key={tab.id}
