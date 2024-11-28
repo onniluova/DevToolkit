@@ -4,8 +4,8 @@ import GeneralContainer from "../containers/GeneralContainer.jsx";
 const HashContent = () => {
     return (
         <div className="flex flex-col space-y-4 px-4">
-            <div className="flex flex-col w-3/6 bg-gray-300 rounded-md shadow-md mx-auto">
-                <p className="text-lg font-bold text-center py-4">Hash</p>
+            <div className="flex flex-col w-5/12 bg-gray-300 bg-gradient-to-b from-blue-500 to-blue-600 rounded-md shadow-md mx-auto">
+                <p className="text-lg text-white font-bold text-center py-4">Hash</p>
             </div>
             <div className="flex justify-center gap-2">
                 <GeneralContainer title="Input">
