@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import HashContent from "@/components/HashContent.jsx";
-import ColorConverterContent from "@/components/ColorConverterContent.jsx";
-import FormatContent from "@/components/FormatContent.jsx";
-import EfficiencyTimer from "@/components/EfficiencyTimer.jsx";
+import HashContent from "@/components/tools/HashContent.jsx";
+import ColorConverterContent from "@/components/tools/ColorConverterContent.jsx";
+import FormatContent from "@/components/tools/FormatContent.jsx";
+import CodePerformanceContainer from "@/components/tools/CodePerformanceContent.jsx";
 
 const Tabs = () => {
     const [activeTab, setActiveTab] = useState("hash")
@@ -10,7 +10,7 @@ const Tabs = () => {
     const tabs = [
         {   id: 'hash', label: 'Hash' },
         {   id: 'format', label: 'Format' },
-        {   id: 'efficiency', label: 'Efficiency Test' },
+        {   id: 'performance', label: 'Code Performance' },
         {   id: 'color', label: 'Color Converter' }
     ]
 
@@ -24,9 +24,9 @@ const Tabs = () => {
                 return (
                     <FormatContent />
                 )
-            case 'efficiency':
+            case 'performance':
                 return (
-                    <EfficiencyTimer />
+                    <CodePerformanceContainer />
                 )
             case 'color':
                 return (
