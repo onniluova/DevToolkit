@@ -19,9 +19,9 @@ const HashContent = () => {
                 </GeneralContainer>
                 <div className={"flex-1 justify-center"}>
                     <CustomDropdown title="SHA-256" items={HashAlgorithms}
-                                    className="w-48 h-10 text-center"></CustomDropdown>
+                                    className="w-48 h-14 text-center rounded-md"></CustomDropdown>
                     <CustomButton title={"Hash  "}
-                                  className={"bg-blue-500 font-bold text-white hover:bg-blue-400 transition-colors rounded-md"}></CustomButton>
+                                  className={"bg-blue-500 mt-3 font-bold text-white hover:bg-blue-400 transition-colors rounded-md"}></CustomButton>
                 </div>
                 <GeneralContainer title="Output">
                     <textarea
