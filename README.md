@@ -1,4 +1,4 @@
-# Developer's Toolkit (In development)
+# Developer's Toolkit v0.7
 ![image](https://github.com/user-attachments/assets/1ab46bd6-e695-4f5b-8bea-ce586b716a2b)
 
 DevToolkit is a modern web application that provides essential development utilities for web developers. It offers features like hashing, formatting, code performance benchmarking, and color conversion. The project is built using React for the frontend and Node.js for the backend.
@@ -29,13 +29,13 @@ DevToolkit is a modern web application that provides essential development utili
 
 - Express.js
 
-- API endpoints to handle various utility functions
+- API endpoints to handle utility functions
 
 # Installation
 
 Clone the repository:
 
-`` git clone https://github.com/yourusername/DevToolkit.git `` 
+`` git clone https://github.com/onniluova/DevToolkit.git `` 
 
 Navigate to the project directory:
 
@@ -47,15 +47,24 @@ Install dependencies:
 
 # Running the Application
 
-## Start the Backend
+Clone backend
+
+`` git clone https://github.com/onniluova/dev-toolkit-api.git `` 
 
 `` cd backend `` 
-`` node server.js `` 
+
+Install dependencies:
+
+`` npm install `` 
+
+Start the Backend
+
+Run the app.js.
 
 ## Start the Frontend
 
 ``cd frontend ``
-``npm start ``
+``npm run dev ``
 
 The application should now be running at http://localhost:3000.
 
