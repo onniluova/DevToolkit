@@ -35,7 +35,7 @@ DevToolkit is a modern web application that provides essential development utili
 
 Clone the repository:
 
-`` git clone https://github.com/yourusername/DevToolkit.git `` 
+`` git clone https://github.com/onniluova/DevToolkit.git `` 
 
 Navigate to the project directory:
 
@@ -47,10 +47,11 @@ Install dependencies:
 
 # Running the Application
 
+## Clone backend
+
+`` git clone https://github.com/onniluova/dev-toolkit-api.git `` 
+
 ## Start the Backend
-
-https://github.com/onniluova/dev-toolkit-api
-
 `` cd backend `` 
 `` npm install `` 
 
