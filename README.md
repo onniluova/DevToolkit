@@ -49,13 +49,17 @@ Install dependencies:
 
 ## Start the Backend
 
+https://github.com/onniluova/dev-toolkit-api
+
 `` cd backend `` 
-`` node server.js `` 
+`` npm install `` 
+
+Run the app.js
 
 ## Start the Frontend
 
 ``cd frontend ``
-``npm start ``
+``npm run dev ``
 
 The application should now be running at http://localhost:3000.
 
