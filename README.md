@@ -47,15 +47,19 @@ Install dependencies:
 
 # Running the Application
 
-## Clone backend
+Clone backend
 
 `` git clone https://github.com/onniluova/dev-toolkit-api.git `` 
 
-## Start the Backend
 `` cd backend `` 
+
+Install dependencies:
+
 `` npm install `` 
 
-Run the app.js
+Start the Backend
+
+Run the app.js.
 
 ## Start the Frontend
 
