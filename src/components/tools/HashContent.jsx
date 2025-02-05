@@ -19,10 +19,17 @@ const HashContent = () => {
 
     const handleAlgorithmChange = (e) => {
         setAlgorithm(e.target.value);
+        setError(null);
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!inputText.trim()) {
+            setError('Please enter text to hash');
+            return;
+        }
+
         setLoading(true);
         setError(null);
 
@@ -32,13 +39,15 @@ const HashContent = () => {
                 algorithm: algorithm
             };
 
-            const response = await hashService.calculateHash(payload);
+            const result = await hashService.calculateHash(payload);
+            console.log('Hash result:', result); // Debug log
 
-            setHashResult(response.data.hash);
+            setHashResult(result.data.hash);
 
         } catch (error) {
-            setError(error.response?.data?.message || 'An error occurred while generating the hash');
             console.error('Hashing error:', error);
+            setError(error.response?.data?.message || 'An error occurred while generating the hash');
+            setHashResult('');
         } finally {
             setLoading(false);
         }
@@ -49,28 +58,40 @@ const HashContent = () => {
             <form onSubmit={handleSubmit}>
                 <div className="flex justify-center gap-2">
                     <GeneralContainer title="Input">
-                    <textarea
-                        placeholder="Enter text to hash..."
-                        onChange={(e) => setInputText(e.target.value)}
-                        className="w-full h-full shadow-sm rounded-md bg-gray-100 resize-none scrollbar-hide"
-                    />
+                        <textarea
+                            placeholder="Enter text to hash..."
+                            value={inputText}
+                            onChange={(e) => setInputText(e.target.value)}
+                            className="w-full h-full shadow-sm rounded-md bg-gray-100 resize-none scrollbar-hide p-2"
+                        />
                     </GeneralContainer>
-                    <div className={"flex-1 justify-center"}>
-                        <CustomDropdown title="SHA-256" items={HashAlgorithms}
-                                        className="w-48 h-14 text-center rounded-md"
-                                        onChange={handleAlgorithmChange}/>
-                        <CustomButton title={"Hash  "}
-                                      className={"bg-blue-500 mt-3 font-bold text-white hover:bg-blue-400 transition-colors rounded-md"}></CustomButton>
+                    <div className="flex-1 justify-center">
+                        <CustomDropdown
+                            title="SHA-256"
+                            items={HashAlgorithms}
+                            className="w-48 h-14 text-center rounded-md"
+                            onChange={handleAlgorithmChange}
+                            value={algorithm}
+                        />
+                        <CustomButton
+                            title={loading ? "Hashing..." : "Hash"}
+                            type="submit"
+                            disabled={loading}
+                            className="bg-blue-500 mt-3 font-bold text-white hover:bg-blue-400 transition-colors rounded-md w-full"
+                        />
                     </div>
                     <GeneralContainer title="Output">
-                    <textarea
-                        value={hashResult}
-                        className="w-full h-full shadow-sm rounded-md bg-gray-100 resize-none scrollbar-hide"
-                        readOnly
-                    />
+                        <textarea
+                            value={hashResult}
+                            className="w-full h-full shadow-sm rounded-md bg-gray-100 resize-none scrollbar-hide p-2"
+                            readOnly
+                            placeholder="Hash result will appear here..."
+                        />
                     </GeneralContainer>
                 </div>
-                <p className={error ? "text-red-500 text-center" : "hidden"}>{error}</p>
+                {error && (
+                    <p className="text-red-500 text-center mt-2">{error}</p>
+                )}
             </form>
         </div>
     )
