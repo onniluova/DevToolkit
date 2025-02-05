@@ -29,7 +29,7 @@ DevToolkit is a modern web application that provides essential development utili
 
 - Express.js
 
-- API endpoints to handle various utility functions
+- API endpoints to handle utility functions
 
 # Installation
 
