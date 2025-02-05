@@ -2,18 +2,17 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
-import Container from './components/Container'
-import Tabs from './components/Tabs.jsx'
+import ContentContainer from './components/containers/ContentContainer.jsx'
+import Tabs from './components/common/Tabs.jsx'
 
 const App = () => {
     return (
-        <Container>
+        <ContentContainer>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home  />} />
                 <Route path="/about" element={<About />} />
             </Routes>
-            <Tabs />
-        </Container>
+        </ContentContainer>
     )
 }
 export default App
